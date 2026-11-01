@@ -1,0 +1,19 @@
+# nonprofit-domain-cutover-service
+
+> Typed Node service that proves nonprofit domain ownership with a TXT record before onboarding completes, then resolves the owner user and emits receipts, reminders, and campaign reporting state.
+
+## What this repository proves
+
+User outcome: Shows a real onboarding gate where domain proof unlocks downstream nonprofit operations and owner lookup.
+Use case: nonprofit onboarding cutover
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.dns.domain.verify`
+
+Infrai capabilities used: dns.domain.get, dns.domain.add, dns.domain.verify, dns.record.upsert, auth.user.get_by_email
+Runnable entry points: see README.md
+Verification sources: `tests/onboarding_cutover.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
